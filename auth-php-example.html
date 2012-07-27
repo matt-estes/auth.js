@@ -37,7 +37,8 @@
 					*/
 					var auth = makeAuthUI({	eventHandler: e,
 													apiURI: '/examples/auth-example.php?method=getAPI',
-													pollTimeout: 15000 });
+													// Poll the current session every 10 minutes. This value is in millseconds.
+													pollTimeout: 600000 });
 					/* This makes the inner html of #accountPanel a container for an AJAX "account panel" */
 					auth.addAccountPanel($('#accountPanel'));
 					auth.resetPasswordForm($('#handlePasswordReset'));

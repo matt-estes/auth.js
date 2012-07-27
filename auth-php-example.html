@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<!-----------------------------------------------------------------------------------------------------------
+    Copyright 2012 Matthew S. Estes
+
+    This file is part of auth.js
+
+    This file is licensed separate from the rest of auth.js
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+------------------------------------------------------------------------------------------------------------>
+	<head>
+		<title>Auth.js Test</title>
+		<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="/js/auth-0.0.1-r1.js"></script>
+		<script type="text/javascript">
+			$(document).ready(
+				function() {
+					var e =	{	authenticated: function(uname) { 
+											console.log("Authenticated " + uname); 
+										},
+									loggedOut: function() { 
+											console.log("Logged out"); 
+										}
+								};
+					/* If you wanted to use a static JSON file, you would change the apiURI property to something like
+							apiURI: '/examples/auth.api.json',
+					*/
+					var auth = makeAuthUI({	eventHandler: e,
+													apiURI: '/examples/auth-example.php?method=getAPI',
+													pollTimeout: 15000 });
+					/* This makes the inner html of #accountPanel a container for an AJAX "account panel" */
+					auth.addAccountPanel($('#accountPanel'));
+					auth.resetPasswordForm($('#handlePasswordReset'));
+					auth.emailValidateForm($('#validationFinish'));
+				});
+		</script>
+	</head>
+	<body>
+		<h1>auth.js example with PHP example server(auth-example.php).</h1>
+		The div below contains an account panel. If you're not logged in, it shows the
+			login template followed by the createAccount template and resetPassword template.
+		Once you successfully login, it replaces this with the
+			logout template followed by the editAccount template.
+		<div id="accountPanel">
+		</div>
+		<h2>The form for doing password resets.</h2>
+		<div id="handlePasswordReset">
+		</div>
+		<h2>The form for finishing email address validations.</h2>
+		<div id="validationFinish">
+		</div>
+		<!-- This div is hidden, because the templates are loaded into
+		it via an ajax request by auth.js. You can change the ID used by
+		adding the 'id' property to the option object passed to makeAuthUI:
+			var auth = makeAuthUI({ id: '#MyHiddenDivForTemplates', ... });
+		-->
+		<div style="display: none" id="authTemplates"></div>
+	</body>
+</html>

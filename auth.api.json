@@ -1,0 +1,37 @@
+{
+	"login": { 
+		"method": "POST", 
+		"uri": "/auth/login" },
+	"logout": {
+		"method": "POST",
+		"uri": "/auth/logout" },
+	"requestPasswordReset": {
+		"method": "POST",
+		"uri": "/auth/requestPasswordReset" },
+	"resetPassword": {
+		"method": "POST",
+		"uri": "/auth/resetPassword" },
+	"createAccount": {
+		"method": "POST",
+		"uri": "/auth/createAccount" },
+	"addAccount": {
+		"method": "POST",
+		"uri": "/auth/addAccount" },
+	"removeAccount": {
+		"method": "POST",
+		"uri": "/auth/removeAccount" },
+	"changePassword": {
+		"method": "POST",
+		"uri": "/auth/changePassword" },
+	"sendAccountValidation": {
+		"method": "POST",
+		"uri": "/auth/sendAccountValidation" },
+	"validateAccount": {
+		"method": "POST",
+		"uri": "/auth/validateAccount" },
+	"whoAmI": {
+		"method": "GET",
+		"result": "json",
+		"uri": "/auth/whoAmI" },
+	"templateURI": "/js/auth.html"
+}

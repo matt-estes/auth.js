@@ -1,0 +1,271 @@
+<!-----------------------------------------------------------------------------------------------------------
+    Copyright 2012 Matthew S. Estes
+
+    This file is part of auth.js
+
+    auth.js is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, under version 3 of the License.
+
+    auth.js is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with auth.js.  If not, see <http://www.gnu.org/licenses/>.
+------------------------------------------------------------------------------------------------------------>
+<div>
+	<div class="createAccount">
+		<a class="openCreateAccountDialog" href="#">Create Account</a>
+	</div>
+	<hr>
+	<div class="resetPassword">
+		<a class="openResetPasswordDialog" href="#">Forgot your password?</a>
+	</div>
+	<hr>
+	<div class="resetPasswordDialog">
+		<form class="requestResetForm">
+			<p>Please enter your email address below. If you have an account with us, you should receive an email
+				in the next few hours with a link and instructions to change your password. If you have further problems
+				please contact our technical support.</p>
+			<table>
+				<tr>
+					<td>Email Address</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Request Password Reset" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<hr>
+	<div class="requestedPasswordReset">
+		<p>Thank you for your request. If you have an account with us, you should receive an email in the next few hours
+		with a link and instructions to change your password. If you don't get this email, please check your spam filter, or
+		request another email to be sent.</p>
+	</div>
+	<hr>
+	<div class="passwordResetRequestFailed">
+		<p>We're sorry, your request could not be completed. Check your internet connection, or try again later.</p>
+	</div>
+	<hr>
+	<div class="finishPasswordResetDialog">
+		<form class="resetPasswordForm">
+			<input type="hidden" name="rid" />
+			<input type="hidden" name="token" />
+			<p>Please enter your new password below to finish resetting your password.</p>
+			<table>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td>Password Again</td>
+					<td><input type="password" name="password2" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Reset Password" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<hr>
+	<div class="passwordReset">
+		<p>Your password has been successfully reset!</p>
+	</div>
+	<hr>
+	<div class="resetPasswordFailed">
+		<p>Your password was not reset. Use the form below if you wish to try again.</p>
+	</div>
+	<hr>
+	<div class="createAccountDialog">
+		<form class="createAccountForm">
+			<table>
+				<tr>
+					<td>Email Address</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td>Password Again</td>
+					<td><input type="password" name="password2" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Create Account" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<hr>
+	<div class="addedAccount">
+		<p>Your email has been added.</p>
+	</div>
+	<hr>
+	<div class="addAccountFailed">
+		<p>We could not add your account at this time. Please try again later or contact technical support.</p>
+	</div>
+	<hr>
+	<div class="accountRemoved">
+		<p>Your email has been deleted..</p>
+	</div>
+	<hr>
+	<div class="accountRemoveFailed">
+		<p>We could not delete your email at this time. Please try again later or contact technical support.</p>
+	</div>
+	<hr>
+	<div class="passwordsDoNotMatch">
+		<p>Your passwords do not match.</p>
+	</div>
+	<hr>
+	<div class="createAccountFailed">
+		<p>I'm sorry, there was an error and your account could not be created. Please try again later or contact technical support.</p>
+	</div>
+	<hr>
+	<div class="editAccount">
+		<a class="openEditAccountDialog" href="#">Edit Account Settings</a>
+	</div>
+	<hr>
+	<div class="accountSettingsDialog">
+		<form class="addAccount">
+			<table>
+				<tr>
+					<td>Add Email Address to account:</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Password for email address:</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td>Password Again</td>
+					<td><input type="password" name="password2" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Add Email Address" /></td>
+				</tr>
+			</table>
+		</form>
+		<ul class="usernameList">
+		</ul>
+		<a class="openChangePasswordDialog" href="#">Change Password</a>
+	</div>
+	<hr>
+	<div class="usernameListItem">
+		<span class="authUsername">username</span> 
+		<form class="removeAccount">
+			<input type="hidden" name="username" />
+			<input type="submit" value="Delete Email Address" />
+		</form> 
+		<form class="validateAccount">
+			<input type="hidden" name="username" />
+			<input type="submit" value="Validate Email Address">
+		</form>
+	</div>
+	<hr>
+	<div class="changePasswordDialog">
+		<form class="changePasswordForm">
+			<table>
+				<tr>
+					<td>Email Address</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Current Password:</td>
+					<td><input type="password" name="oldPassword" /></td>
+				</tr>
+				<tr>
+					<td>New Password</td>
+					<td><input type="password" name="newPassword" /></td>
+				</tr>
+				<tr>
+					<td>New Password Again</td>
+					<td><input type="password" name="newPassword2" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Update Password" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<hr>
+	<div class="changePasswordFailed">
+		<p>I'm sorry, there was an error and your password could not be changed. Please try again later or contact
+		technical support.</p>
+	</div>
+	<hr>
+	<div class="changePasswordAuthFail">
+		<p>We could not authenticate your current credentials. Maybe you mistyped your email address or password?</p>
+	</div>
+	<hr>
+	<div class="passwordChanged">
+		<p>Thank you, your password has been changed.</p>
+	</div>
+	<hr>
+	<div class="loginForm">
+		<form class="loginForm">
+			<table>
+				<tr>
+					<td>Email</td>
+					<td><input type="text" name="username" /></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Login" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<hr>
+	<div class="requestedAccountValidation">
+		<p>Thank you for your request.You should receive an email in the next few hours with a link and instructions to finish validating your email address.
+		If you don't get this email, please check your spam filter, or request another email to be sent.</p>
+	</div>
+	<hr>
+	<div class="requestedAccountValidationFailed">
+		<p>I'm sorry, there was an error and your validation request could not be handled. Please try again later or contact technical support.</p>
+	</div>
+	<hr>
+	<div class="finishUsernameValidationDialog">
+		<form class="validateAccountForm">
+			<table>
+				<tr>
+					<td>Request ID</td>
+					<td><input type="text" name="vid" /></td>
+				</tr>
+				<tr>
+					<td>Validation Token:</td>
+					<td><input type="text" name="token" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Validate my account" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<hr>
+	<div class="accountValidated">
+		<p>Your email address has been successfully validated!</p>
+	</div>
+	<hr>
+	<div class="validationFailed">
+		<p>Your email address could not be validated. Your code may have expired. Please login and request another validation token.</p>
+	</div>
+	<hr>
+	<div class="loginFailed">
+		<p>We could not authenticate your credentials. Maybe you mistyped your email address or password?</p>
+	</div>
+	<hr>
+	<div class="logoutForm">
+		<form class="logoutForm">
+			<input type="submit" value="Log out" />
+		</form>
+	</div>
+</div>
